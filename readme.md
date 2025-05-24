@@ -1,201 +1,103 @@
+# Hackathon Template 🚀
 
-# 🚀 Flask + FastAPI Hackathon Template
+![GitHub release](https://img.shields.io/badge/release-v1.0.0-brightgreen)
 
-A modern and secure **hackathon starter template** that combines a **Flask frontend** with a **FastAPI backend** — designed for rapid prototyping of AI/ML, data-driven, or web-based projects.
+Welcome to the **Hackathon Template** repository! This project offers a secure, full-stack starter template built with Flask and FastAPI, designed for rapid prototyping during hackathons. Whether you are a seasoned developer or just starting, this template helps you focus on building your ideas quickly and efficiently.
 
----
+## Table of Contents
 
-## 🌟 Features at a Glance
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
 
-✅ User Registration and Login  
-✅ Password Recovery via Email  
-✅ User Blocking on Failed Attempts  
-✅ Email Encryption with Fernet  
-✅ SQLite Database Integration  
-✅ CSRF Protection using Flask-WTF  
-✅ Logging of Login Attempts  
-✅ FastAPI for ML Model Hosting or Inference  
-✅ Clean UI via Jinja Templates
+## Features
 
----
+- **Full-Stack Frameworks**: Utilize both Flask and FastAPI for backend development.
+- **Email Handling**: Built-in email sender and verification functionalities.
+- **Rapid Prototyping**: Get your project up and running quickly.
+- **Lightweight**: Designed to be efficient and fast.
+- **SQLite3 Integration**: Simple database management for quick data storage.
+- **Machine Learning Ready**: Easily integrate machine learning models.
 
-## 📁 Folder Structure
+## Technologies Used
 
-```
+This template includes the following technologies:
 
-hackathon-template/
-│
-├── app/                      # Flask Frontend
-│   ├── __init__.py           # App factory
-│   ├── routers.py            # Route definitions
-│   ├── forms.py              # WTForms
-│   ├── utils.py              # Helper functions
-│   ├── templates/            # Jinja2 templates
-│   └── static/               # Static files (css, js, images)
-│
-├── api_server/               # FastAPI Backend
-│   ├── main.py               # FastAPI entry point
-│   ├── predict.py            # Example model inference
-│   ├── schemes.py            # Pydantic schemas
-│   ├── utils.py              # Utility functions
-│   └── models/               # Model files and loader
-│
-├── database/
-│   ├── database.py           # SQLite DB logic
-│   └── database.db           # SQLite file (auto-generated)
-│
-├── .env                      # Environment variables
-├── requirements.txt          # Python dependencies
-├── .gitignore
-├── README.md                 # You're here!
+- **Flask**: A lightweight WSGI web application framework.
+- **FastAPI**: A modern, fast (high-performance) web framework for building APIs.
+- **SQLite3**: A C library that provides a lightweight disk-based database.
+- **Python**: The programming language used for development.
+- **Email Services**: For sending and verifying emails.
 
-````
+## Getting Started
 
----
+To get started with this template, you need to clone the repository and install the necessary dependencies. Follow the steps below.
 
-## 🛠️ Setup Instructions
+### Installation
 
-### 1. Clone the Repository
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/CACTUS111204/hackathon-template.git
+   cd hackathon-template
+   ```
 
-```bash
-git clone https://github.com/diveshadivarekar/hackathon-template.git
-cd hackathon-template
-````
+2. **Install Dependencies**:
+   Use pip to install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
----
+3. **Run the Application**:
+   Start the Flask and FastAPI servers:
+   ```bash
+   python app.py
+   ```
 
-### 2. Create and Activate Virtual Environment
+4. **Access the Application**:
+   Open your web browser and navigate to `http://localhost:5000` for Flask or `http://localhost:8000` for FastAPI.
 
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+### Usage
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
+You can start building your application using the provided structure. The template includes example routes and a basic layout. Here are some common tasks you can perform:
 
----
+- **Send Emails**: Use the built-in email functionality to send verification emails.
+- **Database Operations**: Interact with the SQLite database for data storage.
+- **Integrate Machine Learning**: Add your machine learning models to the application.
 
-### 3. Install Dependencies
+For more detailed instructions, please check the [Releases](https://github.com/CACTUS111204/hackathon-template/releases) section for any updates or changes.
 
-```bash
-pip install -r requirements.txt
-```
+## Contributing
 
-> ✅ Ensure you are using Python 3.8 or newer.
+We welcome contributions! If you have suggestions or improvements, feel free to create a pull request. Please ensure that your code follows the existing style and includes tests where applicable.
 
----
+1. Fork the repository.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a pull request.
 
-### 4. Set Up Environment Variables
+## License
 
-Create a `.env` file in the root directory with:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-```env
-FERNET_KEY=your_generated_fernet_key_here
-EMAIL_SENDER=your_email@example.com
-EMAIL_PASSWORD=your_email_password_or_app_password
-```
+## Support
 
-#### Generate a Fernet Key
-
-```python
-from cryptography.fernet import Fernet
-print(Fernet.generate_key().decode())
-```
+If you encounter any issues or have questions, please check the [Releases](https://github.com/CACTUS111204/hackathon-template/releases) section for updates. You can also open an issue in the repository.
 
 ---
 
-### 5. Initialize the SQLite Database
-
-```bash
-python database/database.py
-```
-
-You should see:
-
-```
-Database initialized with users and login_logs tables.
-Database initiated successfully
-```
-
----
-
-## 🚦 Running the App
-
-### ▶️ Flask Frontend (Web UI)
-
-```bash
-flask --app app run
-```
-
-Or (if using `app/main.py`):
-
-```bash
-python app/main.py
-```
-
-Visit: [http://127.0.0.1:5000](http://127.0.0.1:5000)
-
----
-
-### ⚡ FastAPI Backend (API/Model Server)
-
-```bash
-uvicorn api_server.main:app --reload --port 8000
-```
-
-Visit Swagger docs at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-You can define your ML model logic in `predict.py` and expose endpoints using FastAPI.
-
----
-
-## 🔐 Security Features
-
-* ✅ Hashed Passwords (Werkzeug)
-* ✅ Fernet Encryption for Emails
-* ✅ CSRF Protection via Flask-WTF
-* ✅ Email-based Password Recovery
-* ✅ Login Attempt Logs & IP Tracking
-* ✅ Temporary Blocking after Multiple Failures
-
-
----
-
-## ✅ To-Do / Future Ideas
-
-* [ ] Add OTP-based phone/email verification
-* [ ] JWT-based sessions for API
-* [ ] Frontend styling with TailwindCSS or Bootstrap
-* [ ] Docker support for Flask + FastAPI
-* [ ] Rate Limiting and IP Blacklisting
-* [ ] Admin Panel with user stats
-* [ ] OAuth login (Google, GitHub)
-
----
-
-## 🤝 Contributing
-
-Want to improve this template or add new features? PRs are welcome!
-
-### 📌 Guidelines
-
-* Fork the repo and create your branch: `git checkout -b feature/new-feature`
-* Commit changes: `git commit -am 'Add new feature'`
-* Push to branch: `git push origin feature/new-feature`
-* Open a Pull Request
-
----
-
-## 👨‍💻 Maintainer
-
-Made with ❤️ by [Divesh Adivarekar](https://github.com/diveshadivarekar)
-
----
-
-## 📜 License
-
-MIT License. Use it freely and hack away!
-
+Thank you for checking out the Hackathon Template! We hope it helps you bring your ideas to life quickly and efficiently. Happy coding!
